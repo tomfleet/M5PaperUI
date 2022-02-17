@@ -47,6 +47,12 @@ void HomeScreen::Prepare(WidgetContext *ctx) {
   tf->Name("TicTacToeFrame");
   ctx->RegisterFrame(tf);
 
+  auto mf = Frame::Create(home_dim.x, home_dim.y, home_dim.w, home_dim.h);
+  mf ->Name("My Test Frame");
+  ctx->RegisterFrame(mf);
+
+
+
   CreateAppButton(30, 30, "Paint", PAINTBRUSH_96_96,
                   [ctx](TouchEvent e, Widget *) {
                     if (e.type != EventType::TOUCH_UP)
@@ -55,7 +61,7 @@ void HomeScreen::Prepare(WidgetContext *ctx) {
                     ctx->PushFrame("PaintFrame");
                   });
 
-  CreateAppButton(30 + 116 + 50, 30, "Settings", SETTINGS_96_96,
+  CreateAppButton(30 + 116 + 50, 30, "Twitter", TWIT_96_96,
                   [](TouchEvent e, Widget *) {});
 
   CreateAppButton(30 + 2 * (116 + 50), 30, "Tic Tac Toe", TICTAC_96_96_2,
